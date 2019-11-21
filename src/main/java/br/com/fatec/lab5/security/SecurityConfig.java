@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/","/publico*").permitAll()
 		.antMatchers(HttpMethod.POST,"/register").permitAll()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
+		.antMatchers("/teste").hasRole("ROLE_ADMIN")
 		.anyRequest().authenticated()
 		.and()
 		.addFilterBefore(new JWTLoginFilter("/login", authenticationManager()), 

@@ -41,4 +41,9 @@ public class AcessoController {
 		return ResponseEntity.ok().body(user);
 	}
 
+	@GetMapping("/teste")
+	public ResponseEntity<String> getTeste() {
+		return ResponseEntity.ok().body("Rota de admin");
+	}
+
 }
