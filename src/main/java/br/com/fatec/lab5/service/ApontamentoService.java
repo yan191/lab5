@@ -1,5 +1,7 @@
 package br.com.fatec.lab5.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +32,8 @@ public class ApontamentoService {
 		apontamentoRepository.save(apontamento);
 		return apontamento;
 	}
-
+	
+	public List<Apontamento> findApontamentosByProjetoId(Integer id) {
+		return apontamentoRepository.findByProjetoId(id);
+	}
 }
