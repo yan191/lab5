@@ -16,10 +16,10 @@ public class ApontamentoController {
 	ApontamentoService apontamentoService;
 	
 	@PostMapping("/apontamento")
-	public ResponseEntity<Apontamento> createNewApontamento(@RequestBody Apontamento apontamento){
+	public ResponseEntity<Apontamento> createNewApontamento(@RequestBody ApontamentoForm apForm){
 		Apontamento ap;
 		try {			
-			ap = apontamentoService.save(apontamento);
+			ap = apontamentoService.save(apForm);
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().body(null);
 		}
