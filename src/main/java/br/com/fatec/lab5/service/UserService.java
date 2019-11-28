@@ -1,5 +1,7 @@
 package br.com.fatec.lab5.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
+	@Transactional
 	public User save(User usuario) {
 		User user = new User();
 		user.setUsername(usuario.getUsername());
